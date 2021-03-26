@@ -1,10 +1,12 @@
 import configparser
 from datetime import datetime
-import os
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import udf, col
 from pyspark.sql.functions import year, month, dayofmonth, hour, weekofyear, date_format
-
+import os, json
+from glob2 import glob
+import pandas as pd
+import numpy as np
 
 config = configparser.ConfigParser()
 config.read('dl.cfg')
@@ -23,10 +25,15 @@ def create_spark_session():
 
 def process_song_data(spark, input_data, output_data):
     # get filepath to song data file
-    song_data = 
-    
+    #song_data = placeholder for S3 storage
+    path_to_json = 'C:\\Users\\pit\\Google Drive\\Udacity\\Data_Lake\\data\\song_data\\**\\*.json'
     # read song data file
-    df = 
+    df = pd.DataFrame()
+    file_list = glob(path_to_json)
+
+    for file in file_list:
+        data = pd.read_json(file, lines=True)
+        df = df.append(data, ignore_index=True)
 
     # extract columns to create songs table
     songs_table = 
