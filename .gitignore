@@ -1,0 +1,17 @@
+/data/log-data.zip
+/.idea/inspectionProfiles/profiles_settings.xml
+/data/song-data.zip
+/.idea/modules.xml
+/.idea/misc.xml
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../:\Users\pit\Google Drive\Udacity\Data_Lake\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Zeppelin ignored files
+/ZeppelinRemoteNotebooks/
+/Data_Lake.iml
+/vcs.xml
