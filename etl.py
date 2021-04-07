@@ -42,7 +42,7 @@ def process_song_data(spark, input_data, output_data):
     :return: Correctly formatted and built tables stored as parquet files on target S3
     '''
 
-    song_data = input_data + 'song_data/A/A/*/*.json'
+    song_data = input_data + 'song_data/*/*/*/*.json'
     df = spark.read.json(song_data)
     df.drop_duplicates()
 
@@ -71,7 +71,7 @@ def process_log_data(spark, input_data, output_data):
     :return: Correctly formatted and built tables stored as parquet files on target S3
     '''
 
-    log_data = input_data + 'log_data/2018/11/*.json'
+    log_data = input_data + 'log_data/*/*/*.json'
     df = spark.read.json(log_data)
     df = df.filter(df.page == 'NextSong').drop_duplicates()
 
